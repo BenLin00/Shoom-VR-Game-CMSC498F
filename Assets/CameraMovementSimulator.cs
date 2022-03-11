@@ -31,7 +31,7 @@ public class CameraMovementSimulator : MonoBehaviour
         if (framesToWaitForMouseLock<=0){
             //position needs to be updated based on orientation. Time.deltaTime is used to normalize for framerate
             transform.position +=             
-            ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))?transform.forward*translationSpeed*Time.deltaTime:(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))?transform.forward*-translationSpeed*Time.deltaTime:Vector3.zero) +             
+            ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))?transform.forward*translationSpeed*Time.deltaTime:(Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.DownArrow))?transform.forward*-translationSpeed*Time.deltaTime:Vector3.zero) +             
             ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))?transform.right*-translationSpeed*Time.deltaTime:(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))?transform.right*translationSpeed*Time.deltaTime:Vector3.zero);
             //yaw rotates around world axis in order to not affect roll
             transform.RotateAround(transform.position,Vector3.up,Input.GetAxis("Mouse X")*Time.deltaTime*rotationSpeed);
@@ -42,6 +42,6 @@ public class CameraMovementSimulator : MonoBehaviour
         } else{
             framesToWaitForMouseLock--;
         }
-            
+
     }
 }

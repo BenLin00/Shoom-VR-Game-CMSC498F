@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     {
         outputText.text = "Total Points: " + currPoints 
             +  "\n Total Objects Collected: " 
-            + currObjs + "\n unique items collected" + currUniqObj;
+            + currObjs + "\n Unique Items Collected: " + currUniqObj;
         
 
         if (currUniqObj == 3) {

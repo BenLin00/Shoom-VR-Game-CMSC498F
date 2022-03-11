@@ -23,8 +23,6 @@ public class Collectible : MonoBehaviour
 
 
         if (other.collider.gameObject.name.Equals("AROrigin")){
-            // print("I, "+this.gameObject.name+" hit another collectible called "+other.gameObject.name);
-
             Destroy(this.gameObject);
         }
 
@@ -44,9 +42,6 @@ public class Collectible : MonoBehaviour
             this.gameObject.transform.Find("New Text").gameObject.GetComponent<TextMesh>().text="Points: 30";
         }
 
-        // outputText=GameObject.FindObjectOfType<TextMesh>();
-        // print("My name is "+this.gameObject.name);
-        // print("My mesh is a "+this.gameObject.GetComponent<MeshFilter>().mesh.name);
     }
 
 }

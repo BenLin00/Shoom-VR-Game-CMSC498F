@@ -5,8 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    [SerializeField]
-    public TextMesh outputText;
+    [SerializeField] TextMesh outputText;
 
     public static int currPoints=0;
     public static int currObjs=0;
@@ -26,6 +25,8 @@ public class Player : MonoBehaviour
             types.Add(name);
             currUniqObj = types.Count;
         }
+
+        
     }
 
 
@@ -38,9 +39,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     async void Update()
     {
-        this.gameObject.transform.Find("New Text").gameObject.GetComponent<TextMesh>().text=
-            "Total Points: " + currPoints +  "\n Total Objects Collected: " 
+        outputText.text = "Total Points: " + currPoints 
+            +  "\n Total Objects Collected: " 
             + currObjs + "\n unique items collected" + currUniqObj;
+        
 
         if (currUniqObj == 3) {
             this.gameObject.transform.Find("New Text").gameObject.GetComponent<TextMesh>().text=

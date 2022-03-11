@@ -42,8 +42,6 @@ public class CameraMovementSimulator : MonoBehaviour
         } else{
             framesToWaitForMouseLock--;
         }
-        
-        outputText.text="frame: "+currentFrame;
-        currentFrame++;
+            
     }
 }

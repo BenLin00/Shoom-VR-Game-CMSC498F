@@ -15,17 +15,17 @@ public class Raycast : MonoBehaviour
                 GameObject obj = result.collider.gameObject;
 
                 if (obj.name.Equals("Cube")){
-                    Player.updatePoints(10);
+                    Player.updatePoints(10, "Cube");
                     Destroy(obj);
                 }
 
                 if (obj.name.Equals("Sphere")){
-                    Player.updatePoints(20);
+                    Player.updatePoints(20, "Sphere");
                     Destroy(obj);
                 }
                         
                 if (obj.name.Equals("Cylinder")){
-                    Player.updatePoints(30);
+                    Player.updatePoints(30, "Cylinder");
                     Destroy(obj);
                 }
             }

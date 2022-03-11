@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    // [SerializeField]
-    public TextMesh outputText;
         
     void OnCollisionEnter(Collision other){
         string objName = other.collider.gameObject.name;
         string thisName = this.gameObject.name;
         
         if (objName.Equals("Cube")){
-            Player.updatePoints(10);
+            Player.updatePoints(10, "Cube");
         }
 
         if (objName.Equals("Sphere")){
-            Player.updatePoints(20);
+            Player.updatePoints(20, "Sphere");
         }
                 
         if (objName.Equals("Cylinder")){
-            Player.updatePoints(30);
+            Player.updatePoints(30, "Cylinder");
         }
 
 

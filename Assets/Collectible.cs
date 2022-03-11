@@ -5,25 +5,25 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
         
-    void OnCollisionEnter(Collision other){
-        string objName = other.collider.gameObject.name;
+    void OnTriggerEnter(Collider other){
+        string objName = other.gameObject.name;
         string thisName = this.gameObject.name;
-        
-        if (objName.Equals("Cube")){
-            Player.updatePoints(10, "Cube");
-        }
+        print(objName);
 
-        if (objName.Equals("Sphere")){
-            Player.updatePoints(20, "Sphere");
-        }
-                
-        if (objName.Equals("Cylinder")){
-            Player.updatePoints(30, "Cylinder");
-        }
+        if (other.gameObject.name.Equals("Main Camera")){
+            if (thisName.Equals("Cube")){
+                Player.updatePoints(10, "Cube");
+            }  
 
-
-        if (other.collider.gameObject.name.Equals("AROrigin")){
+            if (thisName.Equals("Sphere")){
+                Player.updatePoints(20, "Sphere");
+            }
+                    
+            if (thisName.Equals("Cylinder")){
+                Player.updatePoints(30, "Cylinder");
+            }
             Destroy(this.gameObject);
+            
         }
 
     }
